@@ -39,5 +39,15 @@ Once the hash key for a certificate has been validated, it can be used to create
 
 The NFT Creation Smart Contract takes the hash key for the certificate as a parameter, and uses it to create an NFT. The NFT can then be used to verify the authenticity of the certificate.
 
+Once the hash key for a certificate has been validated using the validateCertificateHash function of the University Certificate Issuing Smart Contract, the next step is to create an NFT for the certificate. This can be done using a separate smart contract specifically designed for NFT creation.
+
+The NFT Creation Smart Contract will take the validated hash key for the certificate as a parameter, and use it to create a unique NFT for that certificate. This NFT can then be stored on the blockchain, and can be used to verify the authenticity of the certificate.
+
+To create the NFT, the NFT Creation Smart Contract will typically use a library such as OpenZeppelin, which provides a set of pre-built NFT contracts that can be easily customized for specific use cases.
+
+Once the NFT has been created, it can be assigned to the owner of the certificate (i.e. the student who received the certificate), and can be used to prove the authenticity of the certificate in the future. The NFT can be transferred from the owner to other parties as needed, and can be used to verify the authenticity of the certificate at any time.
+
+Overall, the use of NFTs in this project provides an additional layer of security and authenticity to the certificates issued by the university. By combining the unique hash key for each certificate with an NFT, the university can ensure that its certificates cannot be forged or duplicated, and can be easily verified by anyone with access to the blockchain.
+
 # Conclusion
 The University Certificate Issuing Smart Contract is a powerful tool for universities looking to issue certificates on the blockchain. By giving each certificate a unique hash key, and using it to create an NFT, universities can ensure that their certificates are authentic and secure.
