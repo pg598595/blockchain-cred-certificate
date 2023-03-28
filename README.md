@@ -73,5 +73,40 @@ The function permanently destroys the specified NFT, removing it from the blockc
 
 Overall, these functions and arguments provide the necessary tools for creating, managing, and verifying NFTs for the certificates issued by the University Certificate Issuing Smart Contract. By combining the unique hash keys for each certificate with NFTs, the university can ensure that its certificates are authentic and secure, and can be easily verified by anyone with access to the blockchain.
 
+# Test Cases 
+
+### University Certificate Issuing Smart Contract
+1. Issuing a new certificate
+
+Action: Call the issueCertificate function with valid parameters, including the student's name, the course name, and the date of completion.
+Expected result: The function should create a new certificate with a unique hash key, store it on the blockchain, and emit an event indicating that a new certificate has been issued.
+
+2. Retrieving an existing certificate
+
+Action: Call the getCertificate function with the hash key of an existing certificate.
+Expected result: The function should retrieve the certificate from the blockchain, and return its details, including the student's name, the course name, and the date of completion.
+
+3. Validating a certificate hash key
+
+Action: Call the validateCertificateHash function with the hash key of an existing certificate.
+Expected result: The function should return true, indicating that the certificate hash key is valid and can be used to create an NFT.
+
+### NFT Smart Contract
+
+1. Creating a new NFT
+
+Action: Call the createNFT function with a valid certificate hash key, owner address, and metadata URI.
+Expected result: The function should create a new NFT with a unique ID, assign it to the specified owner, and set the metadata for the NFT using the provided URI.
+
+2. Retrieving metadata for an NFT
+
+Action: Call the getNFTMetadata function with the ID of an existing NFT.
+Expected result: The function should return the metadata for the specified NFT, as a URI pointing to a JSON file.
+
+3. Burning an NFT
+
+Action: Call the burnNFT function with the ID of an existing NFT.
+Expected result: The function should permanently destroy the specified NFT, removing it from the blockchain.
+
 # Conclusion
 The University Certificate Issuing Smart Contract is a powerful tool for universities looking to issue certificates on the blockchain. By giving each certificate a unique hash key, and using it to create an NFT, universities can ensure that their certificates are authentic and secure.
