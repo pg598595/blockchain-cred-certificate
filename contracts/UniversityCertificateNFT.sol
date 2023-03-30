@@ -16,7 +16,7 @@ contract UniversityCertificateNFT is ERC721 {
     
     constructor() ERC721("University Certificate NFT", "UCNFT") {}
     
-    function createNFT(bytes32 _certificateHash, address _owner, string memory _metadataURI) public {
+    function createNFT(bytes32 _certificateHash, address _owner) public {
         require(certificates[_certificateHash].dateOfCompletion > 0, "Certificate does not exist");
         uint256 tokenId = uint256(_certificateHash);
         _mint(_owner, tokenId);

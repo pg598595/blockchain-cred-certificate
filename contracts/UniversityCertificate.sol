@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
 contract UniversityCertificate {
@@ -11,7 +13,7 @@ contract UniversityCertificate {
     mapping (address => Certificate[]) certificates;
     
     function generateId() private view returns (uint256) {
-        return uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty, msg.sender)));
+        return uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender)));
     }
     
     function issueCertificate(uint256 _studentId, uint256 _courseId) public returns (uint256) {

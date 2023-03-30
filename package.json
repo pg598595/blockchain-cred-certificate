@@ -1,0 +1,23 @@
+{
+  "name": "blockchain-cred-certificate",
+  "version": "1.0.0",
+  "description": "This smart contract is designed to issue certificates on the blockchain, and give each certificate a unique hash key. This key can be used to create a Non-Fungible Token (NFT) for the certificate, which can be used to verify its authenticity.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pg598595/blockchain-cred-certificate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pg598595/blockchain-cred-certificate/issues"
+  },
+  "homepage": "https://github.com/pg598595/blockchain-cred-certificate#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2"
+  }
+}
