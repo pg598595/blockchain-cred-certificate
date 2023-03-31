@@ -108,5 +108,17 @@ Expected result: The function should return the metadata for the specified NFT, 
 Action: Call the burnNFT function with the ID of an existing NFT.
 Expected result: The function should permanently destroy the specified NFT, removing it from the blockchain.
 
+# Gas Cost Optimization 
+
+1. Use view and pure functions: Functions that do not modify the state of the contract, such as getCertificate in the University Certificate Issuing Smart Contract and getNFTMetadata in the NFT Smart Contract, can be marked as view or pure. This allows them to be executed locally on the client side without incurring any gas costs.
+
+2. Minimize storage usage: Storage is one of the most expensive operations in smart contract execution. To reduce the gas cost of storage, data should be stored in a compact format and unnecessary data should be avoided. For example, in the University Certificate Issuing Smart Contract, the certificate details are stored in a struct to reduce the amount of storage required.
+
+3. Use event logging instead of returning data: When a function needs to return data to the client, it can be more efficient to log an event instead of returning the data directly. The client can then listen for the event and retrieve the data from the event logs. This reduces the amount of gas used for returning data.
+
+4. Use low-level assembly operations: In some cases, using low-level assembly operations can be more efficient than using higher-level Solidity operations. For example, in the NFT Smart Contract, the createNFT function uses the low-level SSTORE operation to store the token ID instead of using a Solidity mapping, which can be more gas-efficient.
+
+5. Avoid loops and recursion: Loops and recursion can be gas-intensive operations and should be avoided whenever possible. If a loop or recursion is required, its complexity should be minimized to reduce the gas cost.
+
 # Conclusion
 The University Certificate Issuing Smart Contract is a powerful tool for universities looking to issue certificates on the blockchain. By giving each certificate a unique hash key, and using it to create an NFT, universities can ensure that their certificates are authentic and secure.
